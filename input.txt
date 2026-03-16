@@ -1,0 +1,4 @@
+# spectrum teff feh logg mass radius
+hd2615.txt 6306 -0.57 3.94 1.08 1.83
+bd+23527.txt 5870 -0.01 4.48 1.02 0.96
+hd5133.txt 5900 -0.10 4.30 0.95 1.10
