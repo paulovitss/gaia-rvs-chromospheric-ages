@@ -22,18 +22,25 @@ The program expects two types of inputs:
 
 ### 1. Stellar parameters table
 
-A text file (input.txt) containing the stellar parameters:
+A text file (input.txt) containing the stellar parameters, following this example:
+```text
 spectrum teff feh logg mass radius
-hd2615.txt 6306 -0.57 3.94 1.08 1.83 (example)
-bd+23527.txt 5870 -0.01 4.48 1.02 0.96 (example)
-hd5133.txt 5900 -0.10 4.30 0.95 1.10 (example)
+hd2615.txt 6306 -0.57 3.94 1.08 1.83
+bd+23527.txt 5870 -0.01 4.48 1.02 0.96
+hd5133.txt 5900 -0.10 4.30 0.95 1.10
+```
 
-spectrum: spectrum filename
-teff: effective temperature (K)
-feh: metallicity [Fe/H] (dex)
-logg: surface gravity (log, dex)
-mass: stellar mass (solar units)
-radius: stellar radius (solar units)
+Parameters:
+
+| Column | Description |
+|------|-------------|
+| spectrum | spectrum filename |
+| teff | effective temperature (K) |
+| feh | metallicity [Fe/H] |
+| logg | surface gravity |
+| mass | stellar mass (solar units) |
+| radius | stellar radius (solar units) |
+
 
 
 ### 2. Spectra
@@ -41,6 +48,7 @@ radius: stellar radius (solar units)
 Spectra must be placed inside a folder called **spectra/**.
 
 Each spectrum must be a txt file containing two columns separated by a comma containing wavelength and normalized flux, following the example:
+```text
 lamb_air,flux
 8457.675933875988,0.99486476
 8457.775906843408,0.9959605
@@ -49,6 +57,7 @@ lamb_air,flux
 8458.075825745636,0.996022
 8458.175798713033,0.99599385
 ...
+```
 
 The spectra must be converted to the air reference wavelenght (rather than vacuum). 
 
@@ -57,21 +66,21 @@ The spectra must be converted to the air reference wavelenght (rather than vacuu
 # Running the code
 
 Run the program with:
-
+```bash
 python gaia_chromospheric_ages.py input.txt output.txt
-
+```
 Optional plotting:
-
+```bash
 python gaia_chromospheric_ages.py input.txt output.txt --plot
-
-Plots will be saved in plots/.
+```
+Plots will be saved in **plots/**.
 
 ---
 
 # Output
 
 The code generates an output table with the following columns:
-
+```text
 spectrum teff feh logg mass rad
 Fap_8498 Fap_8542 Fap_8662
 Fsc_8498 Fsc_8542 Fsc_8662
@@ -79,6 +88,7 @@ Ftot_8498 Ftot_8542 Ftot_8662
 Fphot_8498 Fphot_8542 Fphot_8662
 Fchrom_8498 Fchrom_8542 Fchrom_8662
 Fchrom_mean log_age flag
+```
 
 Where:
 
