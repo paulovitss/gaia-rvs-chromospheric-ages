@@ -129,7 +129,7 @@ Using the `--plot` option produces diagnostic plots showing:
 
 Example:
 
-![plots](hd5133.pdf)
+![plot](example_plot.png)
 
 ---
 
